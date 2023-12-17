@@ -1,0 +1,34 @@
+// AMS PLL Project: Charge Pump (CHP)
+`include "constants.vams"
+`include "disciplines.vams"
+// UP: Up signal
+// DN: Dn signal
+// IOUT: CHP current output
+// Since the output is current, IOUT cannot be left unconnected (o.c.) in the testbench
+module CHP(UP,DN,IOUT);
+input UP,DN;
+inout IOUT;
+electrical UP,DN,IOUT;
+// ichp: CHP current
+parameter real ichp = 10u from [0:inf);
+// Threshold voltage for digital signals
+parameter real thresh=0.6;
+// rise/fall/delay times of CHP output
+parameter real trise=10p, tfall=10p, td=0;
+// Internal variable for CHP output current
+real IOUT_i = 0;
+analog begin
+// Generate events at UP and DN transitions
+@(cross(V(UP)-thresh,0))
+;
+@(cross(V(DN)-thresh,0))
+;
+if ((V(UP) > thresh) && (V(DN) < thresh))
+IOUT_i = -ichp;
+else if ((V(UP) < thresh) && (V(DN) > thresh))
+IOUT_i = ichp;
+else
+IOUT_i = 0;
+I(IOUT) <+ transition(IOUT_i,td,trise,tfall);
+end
+endmodule
