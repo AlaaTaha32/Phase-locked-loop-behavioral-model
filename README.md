@@ -25,5 +25,6 @@ VCO control voltage behavior
 
 ![VCO CTRL](https://github.com/AlaaTaha32/Phase-locked-loop-behavioral-model/assets/154026967/12db8552-b22f-471b-84a1-0690d2bdcd20)
 
-
+# Resources
+[1] H. Omran, “Design of Low Power CMOS Direct Digital Frequency Synthesizer,” thesis, 2010 
 
