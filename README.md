@@ -18,9 +18,11 @@ Behavioral models for PLL type II components are implemented using Verilog-A. Th
 
 # Virtuoso Simulation
 PLL testbench
-v![tb](https://github.com/AlaaTaha32/Phase-locked-loop-behavioral-model/assets/154026967/dd89da37-9b9b-47c4-88ff-261dd207a0d7)
+
+![tb](https://github.com/AlaaTaha32/Phase-locked-loop-behavioral-model/assets/154026967/dd89da37-9b9b-47c4-88ff-261dd207a0d7)
 
 VCO control voltage behavior
+
 ![VCO CTRL](https://github.com/AlaaTaha32/Phase-locked-loop-behavioral-model/assets/154026967/12db8552-b22f-471b-84a1-0690d2bdcd20)
 
 
